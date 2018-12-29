@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HelloWorld",
+            "request": "launch",
+            "mainClass": "org.smile921.graphql.hello.HelloWorld",
+            "projectName": "boilerplate-graphql"
+        }
+    ]
+}
