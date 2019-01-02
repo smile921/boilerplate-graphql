@@ -1,5 +1,5 @@
 package org.smile921.graphql.po;
 
-public class Episode {
-
+public enum Episode {
+	NEWHOPE, EMPIRE, JEDI
 }
