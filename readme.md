@@ -10,3 +10,25 @@
 
 > GraphQL Java Tools 把 GraphQL 对象的 熟悉和方法 映射到 Java 的熟性和方法。对于绝大多数 scalar 成员 一个简单的 POJO 对象 有成员和 getter 方法就足以描述 GraphQL 的数据对象了。对于更复杂的成员引用了另外一个对象的情况， GraphQL Java Tools 使用 Data Classes 和 Resolvers 来实现这个情况。
 
+* [第三步](https://www.graphql-java.com/documentation/v11/data-fetching/)
+  根据第二步的探索研究，接下来重点是实现 Data Fetcher。 即先通过 SchemaParser parse schema 得到一个parser 再得到TypeDefinitionRegistry ，再构建对应的 RuntimeWiring 。而这个 RuntimeWiring 主要是找到对于的 Data Fetcher . 接下来只需要实现 DataFetcher 。
+  Data Fetcher 会有一个 DataFetchingEnvironment , 根据 DataFetchingEnvironment 可以找到对于的 repository 大抵如此吧。
+```java
+        DataFetcher productsDataFetcher = new DataFetcher<List<ProductDTO>>() {
+            @Override
+            public List<ProductDTO> get(DataFetchingEnvironment environment) {
+                DatabaseSecurityCtx ctx = environment.getContext();
+
+                List<ProductDTO> products;
+                String match = environment.getArgument("match");
+                if (match != null) {
+                    products = fetchProductsFromDatabaseWithMatching(ctx, match);
+                } else {
+                    products = fetchAllProductsFromDatabase(ctx);
+                }
+                return products;
+            }
+        };
+```
+        
+  
