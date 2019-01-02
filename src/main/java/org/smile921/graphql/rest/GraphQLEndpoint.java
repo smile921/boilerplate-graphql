@@ -4,7 +4,8 @@ import java.io.File;
 
 import javax.management.Query;
 import javax.servlet.annotation.WebServlet;
- 
+
+import org.smile921.graphql.repo.FriendsData;
 import org.smile921.graphql.repo.HumanRepository;
 
 import graphql.schema.Coercing;
@@ -26,7 +27,7 @@ public class GraphQLEndpoint {
 		SchemaParser parser = new SchemaParser();
 				File file = new File("schema.graphqls");
 		TypeDefinitionRegistry registry = parser.parse(file);
-
+		
 		RuntimeWiring runtimeWiring = buildRuntimeWiring();
 		SchemaGenerator schemaGenerator = new SchemaGenerator();
 		GraphQLSchema graphQLSchema = schemaGenerator.makeExecutableSchema(registry, runtimeWiring);
@@ -34,8 +35,16 @@ public class GraphQLEndpoint {
 	}
 
 	private RuntimeWiring buildRuntimeWiring() {
-		// TODO Auto-generated method stub
-		return null;
+		GraphQLScalarType scalar =  null;
+		return RuntimeWiring.newRuntimeWiring()				 
+                .type("Human", typeWiring -> typeWiring
+                        .dataFetcher("friends", FriendsData.getFriendsDataFetcher())
+                )
+                // you can use builder syntax if you don't like the lambda syntax
+                .type("Droid", typeWiring -> typeWiring
+                        .dataFetcher("friends", FriendsData.getFriendsDataFetcher())
+                )                   
+                .build();
 	}
 	 
 
