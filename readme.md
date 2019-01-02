@@ -1,18 +1,18 @@
 #  a practise project with graphql
 
-## [graphql-java ³õÌ½](https://www.graphql-java.com/documentation/v11/)
+## [graphql-java åˆæ¢](https://www.graphql-java.com/documentation/v11/)
 
-* [¸ù¾İÕâ¸öÎÄµµÍê³ÉµÚÒ»²½](https://www.graphql-java.com/documentation/v11/getting-started/)
-³õÊ¼»¯ÏîÄ¿»ù±¾¿ÉÒÔ¡£
-* [µÚ¶ş²½](https://www.graphql-java.com/documentation/v11/schema/) ²»ÖªµÀÊ²Ã´Ô­Òò×ö²»ÏÂÈ¥ÁË¡£²é²é×ÊÁÏ£¬»»¸ö×ËÊÆ [¿´ÍêÕâ¸öÎÄµµ](https://www.graphql-java-kickstart.com/tools/schema-definition/)ÔÙÈ¥ÊµÏÖÕâ¸öschema µ½javaµÄ¹ı³ÌÃ²ËÆÓĞµãÃ¼Ä¿ÁË¡£
+* [æ ¹æ®è¿™ä¸ªæ–‡æ¡£å®Œæˆç¬¬ä¸€æ­¥](https://www.graphql-java.com/documentation/v11/getting-started/)
+åˆå§‹åŒ–é¡¹ç›®åŸºæœ¬å¯ä»¥ã€‚
+* [ç¬¬äºŒæ­¥](https://www.graphql-java.com/documentation/v11/schema/) ä¸çŸ¥é“ä»€ä¹ˆåŸå› åšä¸ä¸‹å»äº†ã€‚æŸ¥æŸ¥èµ„æ–™ï¼Œæ¢ä¸ªå§¿åŠ¿ [çœ‹å®Œè¿™ä¸ªæ–‡æ¡£](https://www.graphql-java-kickstart.com/tools/schema-definition/)å†å»å®ç°è¿™ä¸ªschema åˆ°javaçš„è¿‡ç¨‹è²Œä¼¼æœ‰ç‚¹çœ‰ç›®äº†ã€‚
 
-> GraphQL Java Tools maps fields on your GraphQL objects to methods and properties on your java objects. For most scalar fields, a POJO with fields and/or getter methods is enough to describe the data to GraphQL. More complex fields (like looking up another object) often need more complex methods with state not provided by the GraphQL context (repositories, connections, etc). GraphQL Java Tools uses the concept of ¡°Data Classes¡± and ¡°Resolvers¡± to account for both of these situations.
+> GraphQL Java Tools maps fields on your GraphQL objects to methods and properties on your java objects. For most scalar fields, a POJO with fields and/or getter methods is enough to describe the data to GraphQL. More complex fields (like looking up another object) often need more complex methods with state not provided by the GraphQL context (repositories, connections, etc). GraphQL Java Tools uses the concept of â€œData Classesâ€ and â€œResolversâ€ to account for both of these situations.
 
-> GraphQL Java Tools °Ñ GraphQL ¶ÔÏóµÄ ÊìÏ¤ºÍ·½·¨ Ó³Éäµ½ Java µÄÊìĞÔºÍ·½·¨¡£¶ÔÓÚ¾ø´ó¶àÊı scalar ³ÉÔ± Ò»¸ö¼òµ¥µÄ POJO ¶ÔÏó ÓĞ³ÉÔ±ºÍ getter ·½·¨¾Í×ãÒÔÃèÊö GraphQL µÄÊı¾İ¶ÔÏóÁË¡£¶ÔÓÚ¸ü¸´ÔÓµÄ³ÉÔ±ÒıÓÃÁËÁíÍâÒ»¸ö¶ÔÏóµÄÇé¿ö£¬ GraphQL Java Tools Ê¹ÓÃ Data Classes ºÍ Resolvers À´ÊµÏÖÕâ¸öÇé¿ö¡£
+> GraphQL Java Tools æŠŠ GraphQL å¯¹è±¡çš„ ç†Ÿæ‚‰å’Œæ–¹æ³• æ˜ å°„åˆ° Java çš„ç†Ÿæ€§å’Œæ–¹æ³•ã€‚å¯¹äºç»å¤§å¤šæ•° scalar æˆå‘˜ ä¸€ä¸ªç®€å•çš„ POJO å¯¹è±¡ æœ‰æˆå‘˜å’Œ getter æ–¹æ³•å°±è¶³ä»¥æè¿° GraphQL çš„æ•°æ®å¯¹è±¡äº†ã€‚å¯¹äºæ›´å¤æ‚çš„æˆå‘˜å¼•ç”¨äº†å¦å¤–ä¸€ä¸ªå¯¹è±¡çš„æƒ…å†µï¼Œ GraphQL Java Tools ä½¿ç”¨ Data Classes å’Œ Resolvers æ¥å®ç°è¿™ä¸ªæƒ…å†µã€‚
 
-* [µÚÈı²½](https://www.graphql-java.com/documentation/v11/data-fetching/)
-  ¸ù¾İµÚ¶ş²½µÄÌ½Ë÷ÑĞ¾¿£¬½ÓÏÂÀ´ÖØµãÊÇÊµÏÖ Data Fetcher¡£ ¼´ÏÈÍ¨¹ı SchemaParser parse schema µÃµ½Ò»¸öparser ÔÙµÃµ½TypeDefinitionRegistry £¬ÔÙ¹¹½¨¶ÔÓ¦µÄ RuntimeWiring ¡£¶øÕâ¸ö RuntimeWiring Ö÷ÒªÊÇÕÒµ½¶ÔÓÚµÄ Data Fetcher . ½ÓÏÂÀ´Ö»ĞèÒªÊµÏÖ DataFetcher ¡£
-  Data Fetcher »áÓĞÒ»¸ö DataFetchingEnvironment , ¸ù¾İ DataFetchingEnvironment ¿ÉÒÔÕÒµ½¶ÔÓÚµÄ repository ´óµÖÈç´Ë°É¡£
+* [ç¬¬ä¸‰æ­¥](https://www.graphql-java.com/documentation/v11/data-fetching/)
+  æ ¹æ®ç¬¬äºŒæ­¥çš„æ¢ç´¢ç ”ç©¶ï¼Œæ¥ä¸‹æ¥é‡ç‚¹æ˜¯å®ç° Data Fetcherã€‚ å³å…ˆé€šè¿‡ SchemaParser parse schema å¾—åˆ°ä¸€ä¸ªparser å†å¾—åˆ°TypeDefinitionRegistry ï¼Œå†æ„å»ºå¯¹åº”çš„ RuntimeWiring ã€‚è€Œè¿™ä¸ª RuntimeWiring ä¸»è¦æ˜¯æ‰¾åˆ°å¯¹äºçš„ Data Fetcher . æ¥ä¸‹æ¥åªéœ€è¦å®ç° DataFetcher ã€‚
+  Data Fetcher ä¼šæœ‰ä¸€ä¸ª DataFetchingEnvironment , æ ¹æ® DataFetchingEnvironment å¯ä»¥æ‰¾åˆ°å¯¹äºçš„ repository å¤§æŠµå¦‚æ­¤å§ã€‚
 ```java
         DataFetcher productsDataFetcher = new DataFetcher<List<ProductDTO>>() {
             @Override
